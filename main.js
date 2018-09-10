@@ -5,6 +5,8 @@ var ctx = canvas.getContext("2d");
 (function() {
   let initialize = function() {
     editor.oninput = keyboardEvent;
+    editor.rows = "8";
+    editor.cols = "100";
     window.addEventListener('resize', resizeCanvas);
     canvas.style.position = "relative";
     canvas.style.left = "0px";
