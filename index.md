@@ -13,5 +13,6 @@ graphics.
     <canvas id="editor-canvas">
         This editor uses HTML 5. Please upgrade your browser...
     </canvas>
+    <textarea id="editor-textarea" rows="10"></textarea>
 </div>
 <script src="main.js"></script>
