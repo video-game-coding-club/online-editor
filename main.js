@@ -17,9 +17,16 @@ var ctx = canvas.getContext("2d");
     canvas.height = Math.max(window.innerHeight * 0.5, 200);
   };
 
+
+  let clearCanvas = function() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  };
+
   let keyboardEvent = function(event) {
     try {
       let f = Function(editor.value);
+      clearCanvas();
       f();
     }
     catch (error) {
@@ -28,7 +35,5 @@ var ctx = canvas.getContext("2d");
   };
 
   initialize();
+  clearCanvas();
 })();
-
-ctx.fillStyle = "white";
-ctx.fillRect(0, 0, canvas.width, canvas.height);
