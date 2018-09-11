@@ -17,6 +17,10 @@ var ctx = canvas.getContext("2d");
   let resizeCanvas = function() {
     canvas.width = Math.max(window.innerWidth * 0.5, 200);
     canvas.height = Math.max(window.innerHeight * 0.5, 200);
+    clearCanvas();
+    if (typeof f !== "undefined" && f !== null) {
+      f();
+    }
   };
 
 
@@ -27,14 +31,18 @@ var ctx = canvas.getContext("2d");
 
   let keyboardEvent = function(event) {
     try {
-      let f = Function(editor.value);
+      f = Function(editor.value);
       clearCanvas();
+      console.log("function content");
+      console.log(editor.value);
       f();
     }
     catch (error) {
       console.log("Parsing: " + error);
     }
   };
+
+  let f = undefined;
 
   initialize();
   clearCanvas();
