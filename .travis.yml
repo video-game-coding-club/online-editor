@@ -12,3 +12,4 @@ install:
 
 script:
   - bundle exec danger
+  - bundle exec jekyll build
